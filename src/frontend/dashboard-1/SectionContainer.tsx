@@ -6,7 +6,7 @@ export default function SectionContainer({
   className
 }: {
   children: ReactNode;
-  className: string;
+  className?: string;
 }) {
   return (
     <div className={`${cn('rounded-[24px] flex flex-col pt-2.5 pl-6 shadow-2xl pb-[32px]', className)}`}>

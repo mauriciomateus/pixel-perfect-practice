@@ -2,6 +2,7 @@
 import { supremaRegular, supremaSemibold } from "@/fonts";
 import AppLogo from "@/src/frontend/dashboard-1/AppLogo";
 import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
+import GoalsSection from "@/src/frontend/dashboard-1/GoalsSection";
 import Header from "@/src/frontend/dashboard-1/Header";
 import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
 import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
@@ -42,13 +43,14 @@ export default function Dashboard1() {
       >
         {/* Sidebar container */}
         <Sidebar />
-        <div className="pt-10.75 px-11.75 flex-auto">
+        <div className="pt-10.75 px-11.75 flex-auto ">
           <Header />
-          <div className="flex mt-[44px] ">
+          <div className="flex mt-[44px] gap-[32px]">
             <div className="flex-[596px] grow-0">
               <CardSummary />
               <TransationHistory className="mt-12" />
             </div>
+            <GoalsSection />
           </div>
         </div>
       </div>
