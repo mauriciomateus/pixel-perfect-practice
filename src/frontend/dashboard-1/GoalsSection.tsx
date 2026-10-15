@@ -161,7 +161,7 @@ export default function GoalsSection() {
                     {section.amount}
                   </span>
                   <span className={`${supremaRegular.className} text-light-gray text-[14px] mt-px`}>{section.date}</span>
-                  <div className="mt-[37px] -translate-x-[6px]">{section.icon}</div>
+                  <div className="mt-[37px] translate-x-[4px]">{section.icon}</div>
                   <span className={`${supremaRegular.className} text-dark-gray text-[20px] mt-[4px]`}>{section.label}</span>
                 </SectionContainer>
               </li>
