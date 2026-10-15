@@ -8,19 +8,19 @@ import CardImage from "./CardImage";
 import Caret from "./Caret";
 import { Switch } from "@/components/ui/switch";
 import { FinancialAppSwitch } from "@/components/ui/financial-app-switch";
+import SectionTitle from "./SectionTitle";
+import SectionContainer from "./SectionContainer";
 
 export default function CardSummary() {
   return (
-    <div className="rounded-[24px] flex flex-col pt-2.5 pl-6 shadow-2xl pb-[32px]">
-      <h2 className={`${supremaSemibold.className} text-[20px] text-dark-gray`}>
-        Cards
-      </h2>
+    <SectionContainer>
+      <SectionTitle>Cards</SectionTitle>
       <div className="flex relative pl-2.75">
         <div className="flex flex-col flex-auto">
           <div className="flex flex-col mt-2  relative ">
             {/* Card and arrows container */}
             <div>
-             <VerticalLine/> 
+              <VerticalLine />
               <div className="relative">
                 <CardImage />
                 <div className="absolute  top-[50%] -mt-3 right-4.75">
@@ -101,7 +101,7 @@ export default function CardSummary() {
           </div>
         </div>
       </div>
-    </div>
+    </SectionContainer>
   );
 }
 
@@ -115,9 +115,14 @@ function ProgressBar({ percentage }: { percentage: number }) {
     </span>
   );
 }
- 
-function VerticalLine(){
-return <span className="h-full w-[1px]  py-[10px] flex absolute -right-px" data-vertical>
-                <span className=" bg-[#E8E8E8] flex w-full "></span>
-              </span>
+
+function VerticalLine() {
+  return (
+    <span
+      className="h-full w-[1px]  py-[10px] flex absolute -right-px"
+      data-vertical
+    >
+      <span className=" bg-[#E8E8E8] flex w-full "></span>
+    </span>
+  );
 }

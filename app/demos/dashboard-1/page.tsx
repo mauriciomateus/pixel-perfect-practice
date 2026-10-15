@@ -4,6 +4,7 @@ import AppLogo from "@/src/frontend/dashboard-1/AppLogo";
 import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
 import Header from "@/src/frontend/dashboard-1/Header";
 import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
+import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
 import clsx from "clsx";
 import { Lato } from "next/font/google";
 import { useState } from "react";
@@ -46,6 +47,7 @@ export default function Dashboard1() {
           <div className="flex mt-[44px] ">
             <div className="flex-[596px] grow-0">
               <CardSummary />
+              <TransationHistory className="mt-12" />
             </div>
           </div>
         </div>
