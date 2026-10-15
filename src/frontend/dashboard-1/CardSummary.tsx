@@ -12,25 +12,29 @@ import { FinancialAppSwitch } from "@/components/ui/financial-app-switch";
 export default function CardSummary() {
   return (
     <div className="rounded-[24px] flex flex-col pt-2.5 pl-6 shadow-2xl pb-[32px]">
-      <h2 className={`${supremaSemibold.className} text-[20px] text-dark-gray`}>Cards</h2>
-      <div className="flex relative">
-        <div className="flex flex-col mt-2 ml-2.75 relative pr-9.5 ">
-          <div className="relative">
-            <CardImage />
-            <div className="absolute  top-[50%] -mt-3 right-4">
-              <Caret />
-            </div>
+      <h2 className={`${supremaSemibold.className} text-[20px] text-dark-gray`}>
+        Cards
+      </h2>
+      <div className="flex relative pl-2.75">
+        <div className="flex flex-col flex-auto">
+          <div className="flex flex-col mt-2  relative ">
+            {/* Card and arrows container */}
             <div>
-              <div className="absolute  top-[50%] -mt-3 -rotate-180 -translate-x-5.25">
-                <Caret />
+             <VerticalLine/> 
+              <div className="relative">
+                <CardImage />
+                <div className="absolute  top-[50%] -mt-3 right-4.75">
+                  <Caret />
+                </div>
+                <div>
+                  <div className="absolute  top-[50%] -mt-3 -rotate-180 -translate-x-5.25">
+                    <Caret />
+                  </div>
+                </div>
               </div>
-              <span className="h-full w-[1px]  py-1 flex absolute -right-px">
-                <span className=" bg-[#E8E8E8] flex w-full "></span>
-              </span>
             </div>
           </div>
-
-          <div className="mt-[31px] flex flex-col">
+          <div className="mt-[31px] flex flex-col max-w-[319px]">
             <ProgressBar percentage={21.5} />
             <div className="flex justify-between mt-2.5">
               <p
@@ -46,16 +50,21 @@ export default function CardSummary() {
               </p>
             </div>
           </div>
+          {/* <div>progress container</div> */}
         </div>
         <div className="text-right flex flex-col pt-3.5 pr-7.25 flex-auto">
-          <span className={`${latoSemibold.className} flex flex-col items-end text-[#197bbd]`}>
+          <span
+            className={`${latoSemibold.className} flex flex-col items-end text-[#197bbd]`}
+          >
             <span className="flex flex-nowrap items-end-safe leading-none">
               <span className="text-[18px]  -translate-x-1.75 -translate-y-[2px]">
                 $
               </span>
               <span className="text-[32px] ">2850.75</span>
             </span>
-            <span className={`${supremaRegular.className} text-[14px] text-light-gray`}>
+            <span
+              className={`${supremaRegular.className} text-[14px] text-light-gray`}
+            >
               Current balance
             </span>
           </span>
@@ -98,11 +107,17 @@ export default function CardSummary() {
 
 function ProgressBar({ percentage }: { percentage: number }) {
   return (
-    <span className="flex h-2.5 bg-gray-300 rounded-lg">
+    <span className="flex h-2.5 bg-gray-300 rounded-lg w-full ">
       <span
         className="rounded-lg bg-indigo-700 h-full"
         style={{ width: `${percentage}%` }}
       ></span>
     </span>
   );
+}
+ 
+function VerticalLine(){
+return <span className="h-full w-[1px]  py-[10px] flex absolute -right-px" data-vertical>
+                <span className=" bg-[#E8E8E8] flex w-full "></span>
+              </span>
 }
