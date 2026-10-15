@@ -32,7 +32,7 @@ export default function Dashboard1() {
 
       {/* Html container */}
       <div
-        className={`z-10 relative flex bg-gray-800 text-white w-[1477px]  mx-auto rounded-[59px]
+        className={`z-10 relative flex bg-white text-white w-[1477px]  mx-auto rounded-[59px]
         ${clsx({
           "opacity-0": !showHtml,
           "opacity-50": showHtml,

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  // https://www.figma.com/es-la/comunidad/file/894542039433511203/financial-dashboard
   const projects = [
     {
       figma: 'https://www.figma.com/design/aWM4UWrIqXkIazj1qu4dEn/Financial-Dashboard--Community-?node-id=1-8&t=R9894Xy0Kh7Nf2Ro-0',

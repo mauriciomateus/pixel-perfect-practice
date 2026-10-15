@@ -1,5 +1,10 @@
 import localFont from 'next/font/local'
 
+
+export const latoSemibold= localFont({
+  variable: "--font-lato",
+  src: '/app/fonts/Lato-SemiBold.ttf'
+});
 export const latoBold= localFont({
   variable: "--font-lato",
   src: '/app/fonts/Lato-Bold.ttf'
