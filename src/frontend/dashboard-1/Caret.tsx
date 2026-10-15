@@ -1,0 +1,6 @@
+export default function Caret() {
+    return <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.29233 1.29233L10.9258 10.9258L1.29233 20.5592" stroke="#197BBD" stroke-width="2.58466" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    
+}
