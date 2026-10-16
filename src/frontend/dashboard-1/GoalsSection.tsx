@@ -117,7 +117,7 @@ export default function GoalsSection() {
     },
   ];
   return (
-    <div className="flex flex-col flex-auto pt-[10px]">
+    <div className="flex flex-col pt-[10px]">
       <div className="flex">
         <SectionTitle>
           <div className="flex gap-[7px] items-center">

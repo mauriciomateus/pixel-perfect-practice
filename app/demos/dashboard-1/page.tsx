@@ -5,6 +5,7 @@ import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
 import GoalsSection from "@/src/frontend/dashboard-1/GoalsSection";
 import Header from "@/src/frontend/dashboard-1/Header";
 import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
+import StatsSection from "@/src/frontend/dashboard-1/StatsSection";
 import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
 import clsx from "clsx";
 import { Lato } from "next/font/google";
@@ -50,7 +51,10 @@ export default function Dashboard1() {
               <CardSummary />
               <TransationHistory className="mt-12" />
             </div>
-            <GoalsSection />
+            <div className="flex flex-col flex-auto">
+              <GoalsSection />
+              <StatsSection />
+            </div>
           </div>
         </div>
       </div>
