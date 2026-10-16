@@ -4,6 +4,7 @@ import AppLogo from "@/src/frontend/dashboard-1/AppLogo";
 import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
 import GoalsSection from "@/src/frontend/dashboard-1/GoalsSection";
 import Header from "@/src/frontend/dashboard-1/Header";
+import NewTransactionSection from "@/src/frontend/dashboard-1/NewTransactionSection";
 import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
 import StatsSection from "@/src/frontend/dashboard-1/StatsSection";
 import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
@@ -46,14 +47,21 @@ export default function Dashboard1() {
         <Sidebar />
         <div className="pt-10.75 px-11.75 flex-auto ">
           <Header />
-          <div className="flex mt-[44px] gap-[32px]">
+          <div className="flex mt-[44px] gap-[21px]">
             <div className="flex-[596px] grow-0">
               <CardSummary />
               <TransationHistory className="mt-12" />
             </div>
             <div className="flex flex-col flex-auto">
-              <GoalsSection />
-              <StatsSection />
+              <div className="pl-[12px]">
+                <GoalsSection />
+                <StatsSection />
+              </div>
+
+              <div className="flex mt-[56px]">
+                <NewTransactionSection />
+                {/* <div className="bg-emerald-700 flex-auto">loan</div> */}
+              </div>
             </div>
           </div>
         </div>
