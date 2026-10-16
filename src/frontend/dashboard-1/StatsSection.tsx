@@ -8,6 +8,7 @@ type StatData = {
   percentage: number;
   icon: ReactNode;
   iconBg: string;
+  barFillColor: string;
 };
 
 export default function StatsSection() {
@@ -46,7 +47,8 @@ export default function StatsSection() {
           />
         </svg>
       ),
-      iconBg: '#FFEADA'
+      iconBg: "#FFEADA",
+      barFillColor: "#f89449",
     },
     {
       label: "Electronics",
@@ -64,28 +66,33 @@ export default function StatsSection() {
             stroke="#22A447"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round" />
+            stroke-linejoin="round"
+          />
           <path
             d="M14.5693 7.52442C14.5693 6.41985 15.4648 5.52441 16.5693 5.52441H17.3597C17.8901 5.52441 18.3988 5.73513 18.7739 6.1102L20.3164 7.65269C20.6914 8.02777 20.9022 8.53647 20.9022 9.06691V10.7619C20.9022 11.8665 20.0067 12.7619 18.9022 12.7619H16.5693C15.4648 12.7619 14.5693 11.8665 14.5693 10.7619V7.52442Z"
             stroke="#22A447"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round" />
+            stroke-linejoin="round"
+          />
           <path
             d="M5.07129 17.2832C6.32041 17.2832 7.33301 16.2706 7.33301 15.0215C7.33301 13.7724 6.32041 12.7598 5.07129 12.7598C3.82218 12.7598 2.80957 13.7724 2.80957 15.0215C2.80957 16.2706 3.82218 17.2832 5.07129 17.2832Z"
             stroke="#22A447"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round" />
+            stroke-linejoin="round"
+          />
           <path
             d="M16.8311 17.2832C18.0802 17.2832 19.0928 16.2706 19.0928 15.0215C19.0928 13.7724 18.0802 12.7598 16.8311 12.7598C15.5819 12.7598 14.5693 13.7724 14.5693 15.0215C14.5693 16.2706 15.5819 17.2832 16.8311 17.2832Z"
             stroke="#22A447"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round" />
+            stroke-linejoin="round"
+          />
         </svg>
       ),
-      iconBg: "#FFEADA"
+      iconBg: "#DDF9E4",
+      barFillColor: "#22a145",
     },
     {
       label: "Travels",
@@ -104,7 +111,8 @@ export default function StatsSection() {
           />
         </svg>
       ),
-      iconBg: '#FFEADA'
+      iconBg: "#E4F0FF",
+      barFillColor: "#70a6e8",
     },
   ];
   return (
@@ -126,18 +134,25 @@ export default function StatsSection() {
 function Stat({ stat }: { stat: StatData }) {
   return (
     <div className="flex  mt-[16px]">
-      <div className="size-[43px] rounded-[3px] flex justify-center items-center bg-background " style={{'--background':stat.iconBg}}>
+      <div
+        className="size-[43px] rounded-[3px] flex justify-center items-center bg-background "
+        style={{ "--background": stat.iconBg }}
+      >
         {stat.icon}
       </div>
       <div className="flex-auto pt-[4px] ml-[16px] ">
-        <ProgressBar percentage={stat.percentage} />
+        <ProgressBar percentage={stat.percentage} barFillColor={stat.barFillColor} />
         <p
           className={`${supremaRegular.className} text-[14px] mt-[7px] text-light-gray`}
         >
           {stat.label}
         </p>
       </div>
-      <span className={`text-dark-gray ${latoSemibold.className} text-[24px] leading-none pr-[17px] ml-[17px] -mt-[2px]`}>{stat.percentage}%</span>
+      <span
+        className={`text-dark-gray ${latoSemibold.className} text-[24px] leading-none pr-[17px] ml-[17px] -mt-[2px]`}
+      >
+        {stat.percentage}%
+      </span>
     </div>
   );
 }
