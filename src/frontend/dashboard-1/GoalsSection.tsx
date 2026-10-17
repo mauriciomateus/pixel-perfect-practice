@@ -1,6 +1,7 @@
 import { latoSemibold, supremaRegular } from "@/fonts";
 import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
+import PlusIcon from "./PlusIcon";
 
 export default function GoalsSection() {
   const sections = [
@@ -122,32 +123,7 @@ export default function GoalsSection() {
         <SectionTitle>
           <div className="flex gap-[7px] items-center">
             <span>Goals</span>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                fill="#FFC145"
-              />
-              <path
-                d="M12 8V16"
-                stroke="#404040"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M8 12H16"
-                stroke="#404040"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+           <PlusIcon/> 
           </div>
         </SectionTitle>
       </div>
@@ -161,7 +137,7 @@ export default function GoalsSection() {
                     {section.amount}
                   </span>
                   <span className={`${supremaRegular.className} text-light-gray text-[14px] mt-px`}>{section.date}</span>
-                  <div className="mt-[37px] translate-x-[4px]">{section.icon}</div>
+                  <div className="mt-[37px] translate-x-[4px] h-[26px]">{section.icon}</div>
                   <span className={`${supremaRegular.className} text-dark-gray text-[20px] mt-[4px]`}>{section.label}</span>
                 </SectionContainer>
               </li>
