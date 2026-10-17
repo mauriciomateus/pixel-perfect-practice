@@ -133,14 +133,14 @@ export default function StatsSection() {
 
 function Stat({ stat }: { stat: StatData }) {
   return (
-    <div className="flex  mt-[16px]">
+    <div className="flex  mt-[16px] -ml-[2px] gap-[16px]">
       <div
         className="size-[43px] rounded-[3px] flex justify-center items-center bg-background "
         style={{ "--background": stat.iconBg }}
       >
         {stat.icon}
       </div>
-      <div className="flex-auto pt-[4px] ml-[16px] ">
+      <div className="flex-auto pt-[4px]  ">
         <ProgressBar percentage={stat.percentage} barFillColor={stat.barFillColor} />
         <p
           className={`${supremaRegular.className} text-[14px] mt-[7px] text-light-gray`}

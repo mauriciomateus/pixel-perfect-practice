@@ -5,11 +5,11 @@ export default function Header() {
     <header className="w-full">
       <div className="flex justify-between">
         <div>
-          <h1 className={`text-[43px] ${supremaSemibold.className} leading-11`}>
+          <h1 className={`text-[43px] ${supremaSemibold.className} leading-11 text-dark-gray`}>
             Weekly sumup
           </h1>
-          <p className={`text-[16px] mt-0.75 ${supremaRegular.className}`}>
-            Get summary of your weekly online Transactions here.
+          <p className={`text-[16px] mt-0.75 ${supremaRegular.className} text-dark-gray`}>
+            Get summary of your weekly online transactions here.
           </p>
         </div>
 

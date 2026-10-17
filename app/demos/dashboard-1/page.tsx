@@ -4,6 +4,7 @@ import AppLogo from "@/src/frontend/dashboard-1/AppLogo";
 import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
 import GoalsSection from "@/src/frontend/dashboard-1/GoalsSection";
 import Header from "@/src/frontend/dashboard-1/Header";
+import LoanSection from "@/src/frontend/dashboard-1/LoanSection";
 import NewTransactionSection from "@/src/frontend/dashboard-1/NewTransactionSection";
 import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
 import StatsSection from "@/src/frontend/dashboard-1/StatsSection";
@@ -36,21 +37,23 @@ export default function Dashboard1() {
 
       {/* Html container */}
       <div
-        className={`z-10 relative flex bg-white text-white w-[1477px]  mx-auto rounded-[59px]
+        className={`z-10 relative  bg-white text-white w-[1477px]  mx-auto rounded-[59px]
+          grid
+          grid-cols-[252px_1fr]
         ${clsx({
           "opacity-0": !showHtml,
           "opacity-50": showHtml,
         })}
         `}
       >
-        {/* Sidebar container */}
         <Sidebar />
-        <div className="pt-10.75 px-11.75 flex-auto ">
+        {/* <div className="bg-emerald-900 flex-auto">content palceholder</div> */}
+        <div className="pt-10.75 px-11.75 flex-auto">
           <Header />
           <div className="flex mt-[44px] gap-[21px]">
             <div className="flex-[596px] grow-0">
               <CardSummary />
-              <TransationHistory className="mt-12" />
+              <TransationHistory />
             </div>
             <div className="flex flex-col flex-auto">
               <div className="pl-[12px]">
@@ -58,9 +61,9 @@ export default function Dashboard1() {
                 <StatsSection />
               </div>
 
-              <div className="flex mt-[56px]">
+              <div className="flex mt-[44px] gap-[21px]">
                 <NewTransactionSection />
-                {/* <div className="bg-emerald-700 flex-auto">loan</div> */}
+                <LoanSection />
               </div>
             </div>
           </div>

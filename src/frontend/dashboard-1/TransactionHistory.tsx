@@ -4,8 +4,8 @@ import SectionTitle from "./SectionTitle";
 
 export default function TransationHistory() {
   return (
-    <SectionContainer className="mt-[39px] pl-6 pr-[21px]">
-      <div className="rounded-[24px]">
+    <SectionContainer className="mt-[39px] pl-6 pr-[21px] pb-[26px]">
+      <div>
         <SectionTitle>Transaction history </SectionTitle>
         <TableDemo />
       </div>
