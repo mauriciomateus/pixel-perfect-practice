@@ -235,7 +235,9 @@ export function TableDemo() {
           <TableDemoHeader className="w-[217px] text-light-gray">
             Receiver
           </TableDemoHeader>
-          <TableDemoHeader className="w-[122px]">Type</TableDemoHeader>
+          <TableDemoHeader className="w-[122px] hidden sm:table-cell">
+            Type
+          </TableDemoHeader>
           <TableDemoHeader>Date</TableDemoHeader>
           <TableDemoHeader className="text-right pr-[7px]">
             Amount
@@ -251,7 +253,7 @@ export function TableDemo() {
               <ReceiverCellContent icon={invoice.invoice.icon} text={invoice.invoice.text}/>
             </TableCell>
             <TableCell
-              className={`text-light-gray p-0 ${supremaRegular.className}  text-[14px]`}
+              className={`text-light-gray p-0 hidden sm:table-cell ${supremaRegular.className}  text-[14px]`}
             >
               {invoice.paymentStatus}
             </TableCell>

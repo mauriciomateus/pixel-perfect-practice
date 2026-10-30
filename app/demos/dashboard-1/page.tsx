@@ -25,10 +25,10 @@ export default function Dashboard1() {
   return (
     <div>
       <div
-        className={`flex justify-center w-full min-h-screen absolute transition-opacity
+        className={`hidden justify-center w-full min-h-screen absolute transition-opacity
           ${clsx({
-            "hidden": !showMockup,
-          })}  
+            "desktop:flex": showMockup,
+          })}
             `}
       >
         <div
@@ -42,34 +42,39 @@ export default function Dashboard1() {
 
       {/* Html container */}
       <div
-        className={`z-10 relative  bg-white text-white w-[1477px]  mx-auto rounded-[59px]
-          grid
-          grid-cols-[252px_1fr]
+        className={`z-10 relative  bg-white text-white w-full desktop:w-[1477px]  mx-auto desktop:rounded-[59px]
+          flex flex-col
+          desktop:grid
+          desktop:grid-cols-[252px_1fr]
+          desktop:opacity-(--html-opacity)
         ${clsx({
-          "mix-blend-difference": differenceMode,
+          "desktop:mix-blend-difference": differenceMode,
         })}
         `}
-        style={{
-          // Difference mode needs full opacity so matching pixels turn black
-          opacity: showHtml ? (differenceMode ? 1 : htmlOpacity) : 0,
-        }}
+        style={
+          {
+            // Difference mode needs full opacity so matching pixels turn black.
+            // Only applied from the desktop breakpoint, where the comparison tools live.
+            "--html-opacity": showHtml ? (differenceMode ? 1 : htmlOpacity) : 0,
+          } as React.CSSProperties
+        }
       >
         <Sidebar />
         {/* <div className="bg-emerald-900 flex-auto">content palceholder</div> */}
-        <div className="pt-10.75 px-11.75 flex-auto">
+        <div className="px-4 pt-6 pb-10 md:px-8 desktop:pt-10.75 desktop:px-11.75 desktop:pb-0 flex-auto min-w-0">
           <Header />
-          <div className="flex mt-[44px] gap-[21px]">
-            <div className="flex-[596px] grow-0">
+          <div className="flex flex-col xl:flex-row mt-8 gap-8 desktop:mt-[44px] xl:gap-[21px]">
+            <div className="min-w-0 xl:flex-[596px] xl:grow-0">
               <CardSummary />
               <TransationHistory />
             </div>
-            <div className="flex flex-col flex-auto">
-              <div className="pl-[12px]">
+            <div className="flex flex-col flex-auto min-w-0">
+              <div className="xl:pl-[12px]">
                 <GoalsSection />
                 <StatsSection />
               </div>
 
-              <div className="flex mt-[44px] gap-[21px]">
+              <div className="flex flex-col sm:flex-row mt-8 desktop:mt-[44px] gap-6 sm:gap-[21px]">
                 <NewTransactionSection />
                 <LoanSection />
               </div>
@@ -78,7 +83,12 @@ export default function Dashboard1() {
         </div>
       </div>
 
-      <div className="fixed bottom-1 right-1 w-56 z-20">
+      <p className="desktop:hidden fixed bottom-2 inset-x-2 z-20 rounded-lg bg-dark-gray/90 px-3 py-2 text-center text-xs text-white">
+        Widen your window to at least 1477px to use the pixel perfect
+        comparison tools.
+      </p>
+
+      <div className="hidden desktop:block fixed bottom-1 right-1 w-56 z-20">
         <div className="flex flex-col">
           <ul>
             <li>

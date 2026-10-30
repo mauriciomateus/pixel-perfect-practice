@@ -3,9 +3,9 @@ import { supremaRegular, supremaSemibold } from "@/fonts";
 export default function Header() {
   return (
     <header className="w-full">
-      <div className="flex justify-between">
+      <div className="flex flex-col-reverse gap-6 md:flex-row md:justify-between md:gap-0">
         <div>
-          <h1 className={`text-[43px] ${supremaSemibold.className} leading-11 text-dark-gray`}>
+          <h1 className={`text-[32px] leading-10 sm:text-[43px] sm:leading-11 ${supremaSemibold.className} text-dark-gray`}>
             Weekly sumup
           </h1>
           <p className={`text-[16px] mt-0.75 ${supremaRegular.className} text-dark-gray`}>
@@ -13,7 +13,7 @@ export default function Header() {
           </p>
         </div>
 
-        <nav className="flex items-center ">
+        <nav className="flex items-center self-end md:self-auto">
           <svg
             width="22"
             height="16"

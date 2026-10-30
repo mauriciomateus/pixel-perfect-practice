@@ -1,6 +1,7 @@
 export default function CardImage() {
   return (
     <svg
+      className="max-w-full h-auto"
       width="321"
       height="207"
       viewBox="0 0 321 207"

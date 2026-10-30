@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col flex-[140px]  border-[#ebebeb] border-r-2 " data-sidebar>
+    <div className="flex flex-col flex-[140px] min-w-0  border-[#ebebeb] border-b-2 desktop:border-b-0 desktop:border-r-2 " data-sidebar>
       <Nav />
 
      <SidebarMotto/> 
@@ -220,18 +220,18 @@ function Nav() {
     },
   ];
   return (
-    <div className="flex flex-col px-[43px] pt-[55px] ">
+    <div className="flex flex-col px-4 pt-6 pb-3 md:px-8 desktop:px-[43px] desktop:pt-[55px] desktop:pb-0 ">
       <nav className="w-full">
         <AppLogo />
 
         <ul
-          className={`mt-20 ${latoBold.className} text-[14px] flex flex-col gap-1.75 text-[#aeaeae]`}
+          className={`mt-4 desktop:mt-20 ${latoBold.className} text-[14px] flex desktop:flex-col gap-1.75 overflow-x-auto desktop:overflow-visible text-[#aeaeae]`}
         >
           {navItems.map((navItem, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="shrink-0">
                 <span
-                  className={`px-3 py-[8px] flex items-center gap-[23px]  rounded-[3px]
+                  className={`px-3 py-[8px] flex items-center gap-3 desktop:gap-[23px] whitespace-nowrap desktop:whitespace-normal  rounded-[3px]
                ${clsx({
                  "bg-[#f0f7ff]": navItem.isActive,
                })} 
@@ -376,7 +376,7 @@ function SidebarIcon() {
 }
 
 function SidebarMotto(){
-return <div className="flex flex-col items-center mt-auto pb-[50px]  pb-[72px] pl-[20px]">
+return <div className="hidden desktop:flex flex-col items-center mt-auto pb-[50px]  pb-[72px] pl-[20px]">
         <SidebarIcon />
         <div className=" ">
           <p className={`text-[8.75px] text-center ${supremaRegular.className} text-[9px] text-dark-gray mt-[5px]`}>

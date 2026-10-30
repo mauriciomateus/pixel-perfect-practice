@@ -24,9 +24,9 @@ export default function NewTransactionSection() {
   const users = ["ann", "monica", "john", "mike", "mia"];
 
   return (
-    <SectionContainer className="pl-[12px] mt-[12px]">
+    <SectionContainer className="pl-[12px] pr-3 sm:pr-0 mt-[12px]">
       <SectionTitle className="leading-none">New transaction</SectionTitle>
-      <ul className="flex items-center gap-[11px] mt-[16px]">
+      <ul className="flex flex-wrap items-center gap-[11px] mt-[16px]">
         {users.map((user) => {
           const userName = user.charAt(0).toUpperCase() + user.slice(1);
           return (
@@ -59,8 +59,8 @@ export default function NewTransactionSection() {
         </li>
       </ul>
       <div className="flex items-stretch gap-[9px] mt-[14px] ">
-        <Field className="max-w-sm w-auto -mx-px">
-          <InputGroupFinancialDashboard className=" w-[175px]! h-[37px] rounded-tl-[7px] rounded-bl-[7px]">
+        <Field className="max-w-sm w-auto flex-1 min-w-0 sm:flex-initial sm:min-w-auto -mx-px">
+          <InputGroupFinancialDashboard className=" w-full! sm:w-[175px]! h-[37px] rounded-tl-[7px] rounded-bl-[7px]">
             <InputGroupInputFinancialDashboard
               id="inline-end-input"
               type="text"

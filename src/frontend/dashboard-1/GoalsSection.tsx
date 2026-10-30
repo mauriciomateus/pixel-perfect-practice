@@ -128,7 +128,7 @@ export default function GoalsSection() {
         </SectionTitle>
       </div>
       <div className="">
-        <ul className="grid grid-cols-3 gap-[17px]">
+        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-[17px]">
           {sections.map((section, index) => {
             return (
               <li key={index}>

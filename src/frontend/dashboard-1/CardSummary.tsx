@@ -16,13 +16,13 @@ export default function CardSummary() {
   return (
     <SectionContainer>
       <SectionTitle>Cards</SectionTitle>
-      <div className="flex relative pl-2.75">
+      <div className="flex flex-col sm:flex-row relative pl-2.75">
         <div className="flex flex-col flex-auto">
           <div className="flex flex-col mt-2  relative ">
             {/* Card and arrows container */}
             <div>
               <VerticalLine />
-              <div className="relative">
+              <div className="relative w-fit sm:w-auto">
                 <CardImage />
                 <div className="absolute  top-[50%] -mt-3 right-4.75">
                   <Caret />
@@ -53,7 +53,7 @@ export default function CardSummary() {
           </div>
           {/* <div>progress container</div> */}
         </div>
-        <div className="text-right flex flex-col pt-3.5 pr-7.25 flex-auto">
+        <div className="text-right flex flex-col pt-6 sm:pt-3.5 pr-7.25 flex-auto">
           <span
             className={`${latoSemibold.className} flex flex-col items-end text-[#197bbd]`}
           >
@@ -111,7 +111,7 @@ export default function CardSummary() {
 function VerticalLine() {
   return (
     <span
-      className="h-full w-[1px]  py-[10px] flex absolute -right-px"
+      className="h-full w-[1px]  py-[10px] hidden sm:flex absolute -right-px"
       data-vertical
     >
       <span className=" bg-[#E8E8E8] flex w-full "></span>
