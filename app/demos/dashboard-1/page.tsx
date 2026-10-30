@@ -16,6 +16,11 @@ import clsx from "clsx";
 import { Lato, Ruslan_Display } from "next/font/google";
 import { useState } from "react";
 
+// Explicit colors so the comparison switches stay legible on the light panel
+// in every state: white thumb, mid-gray track when off, near-black track when on.
+const comparisonSwitchClass =
+  "data-unchecked:bg-neutral-400 data-checked:bg-neutral-900 [&_[data-slot=switch-thumb]]:bg-white [&_[data-slot=switch-thumb]]:shadow-sm";
+
 export default function Dashboard1() {
   const [showHtml, setShowHtml] = useState(true);
   const [showMockup, setShowMockup] = useState(true);
@@ -88,13 +93,15 @@ export default function Dashboard1() {
         comparison tools.
       </p>
 
-      <div className="hidden desktop:block fixed bottom-1 right-1 w-56 z-20">
+      {/* Opaque light panel keeps the dark shadcn controls readable over any page content */}
+      <div className="hidden desktop:block fixed bottom-1 right-1 w-60 z-20 rounded-lg border border-neutral-200 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-sm">
         <div className="flex flex-col">
-          <ul>
+          <ul className="space-y-2">
             <li>
               <div className="flex items-center space-x-2">
                 <Switch
                   id="show-mockup"
+                  className={comparisonSwitchClass}
                   checked={showMockup}
                   onCheckedChange={setShowMockup}
                 />
@@ -106,6 +113,7 @@ export default function Dashboard1() {
               <div className="flex items-center space-x-2">
                 <Switch
                   id="show-html"
+                  className={comparisonSwitchClass}
                   checked={showHtml}
                   onCheckedChange={setShowHtml}
                 />
@@ -116,6 +124,7 @@ export default function Dashboard1() {
               <div className="flex items-center space-x-2">
                 <Switch
                   id="difference-mode"
+                  className={comparisonSwitchClass}
                   checked={differenceMode}
                   onCheckedChange={setDifferenceMode}
                 />
