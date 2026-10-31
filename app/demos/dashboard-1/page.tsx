@@ -89,10 +89,18 @@ export default function Dashboard1() {
         </div>
       </div>
 
-      <p className="desktop:hidden fixed bottom-2 inset-x-2 z-20 rounded-lg bg-dark-gray/90 px-3 py-2 text-center text-xs text-white">
-        Widen your window to at least 1477px to use the pixel perfect
-        comparison tools.
-      </p>
+      <div className="desktop:hidden fixed bottom-2 inset-x-2 z-20 flex items-center gap-3 rounded-lg bg-dark-gray/90 px-3 py-2 text-xs text-white">
+        <Link
+          href="/"
+          className="shrink-0 rounded-md bg-white px-2.5 py-1.5 font-medium text-neutral-900"
+        >
+          ← All projects
+        </Link>
+        <p>
+          Widen your window to at least 1477px to use the pixel perfect
+          comparison tools.
+        </p>
+      </div>
 
       {/* Opaque light panel keeps the dark shadcn controls readable over any page content */}
       <div className="hidden desktop:block fixed bottom-1 right-1 w-60 z-20 rounded-lg border border-neutral-200 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-sm">
