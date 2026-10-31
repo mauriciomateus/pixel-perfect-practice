@@ -238,7 +238,6 @@ export function TableDemo() {
           <TableDemoHeader className="w-[122px] hidden sm:table-cell">
             Type
           </TableDemoHeader>
-          <TableDemoHeader>Date</TableDemoHeader>
           <TableDemoHeader className="text-right pr-[7px]">
             Amount
           </TableDemoHeader>

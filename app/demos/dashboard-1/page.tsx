@@ -14,6 +14,7 @@ import StatsSection from "@/src/frontend/dashboard-1/StatsSection";
 import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
 import clsx from "clsx";
 import { Lato, Ruslan_Display } from "next/font/google";
+import Link from "next/link";
 import { useState } from "react";
 
 // Explicit colors so the comparison switches stay legible on the light panel
@@ -96,6 +97,12 @@ export default function Dashboard1() {
       {/* Opaque light panel keeps the dark shadcn controls readable over any page content */}
       <div className="hidden desktop:block fixed bottom-1 right-1 w-60 z-20 rounded-lg border border-neutral-200 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-sm">
         <div className="flex flex-col">
+          <Link
+            href="/"
+            className="mb-3 inline-flex items-center gap-1 border-b border-neutral-200 pb-2 text-sm font-medium text-neutral-600 transition hover:text-neutral-900"
+          >
+            ← All projects
+          </Link>
           <ul className="space-y-2">
             <li>
               <div className="flex items-center space-x-2">
