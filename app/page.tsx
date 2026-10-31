@@ -60,7 +60,7 @@ export default function Home() {
             {projects.map((project) => (
               <li
                 key={project.demo}
-                className="flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <Link
                   href={project.demo}
@@ -72,7 +72,7 @@ export default function Home() {
                     alt={`${project.title} design preview`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover object-top"
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
                   />
                 </Link>
 
@@ -110,7 +110,7 @@ export default function Home() {
                       href={project.demo}
                       className="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700"
                     >
-l
+                    My Html
                     </Link>
                     <a
                       href={project.design.url}
