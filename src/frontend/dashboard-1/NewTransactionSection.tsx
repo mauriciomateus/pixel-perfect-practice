@@ -46,7 +46,7 @@ export default function NewTransactionSection() {
           );
         })}
         <li className="h-full -translate-x-[6px]">
-          <div className="flex flex-col items-center outline-1 outline-emerald-500 h-full">
+          <div className="flex flex-col items-center h-full">
             <div className="h-[42px] flex flex-col justify-center items-center">
               <PlusIcon />
             </div>

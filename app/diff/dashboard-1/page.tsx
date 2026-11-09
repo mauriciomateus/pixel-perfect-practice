@@ -4,14 +4,7 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { supremaRegular, supremaSemibold } from "@/fonts";
 import AppLogo from "@/src/frontend/dashboard-1/AppLogo";
-import CardSummary from "@/src/frontend/dashboard-1/CardSummary";
-import GoalsSection from "@/src/frontend/dashboard-1/GoalsSection";
-import Header from "@/src/frontend/dashboard-1/Header";
-import LoanSection from "@/src/frontend/dashboard-1/LoanSection";
-import NewTransactionSection from "@/src/frontend/dashboard-1/NewTransactionSection";
-import Sidebar from "@/src/frontend/dashboard-1/Sidebar";
-import StatsSection from "@/src/frontend/dashboard-1/StatsSection";
-import TransationHistory from "@/src/frontend/dashboard-1/TransactionHistory";
+import Dashboard from "@/src/frontend/dashboard-1/Dashboard";
 import clsx from "clsx";
 import { Lato, Ruslan_Display } from "next/font/google";
 import Link from "next/link";
@@ -47,16 +40,10 @@ export default function Dashboard1() {
       </div>
 
       {/* Html container */}
-      <div
-        className={`z-10 relative  bg-white text-white w-full desktop:w-[1477px]  mx-auto desktop:rounded-[59px]
-          flex flex-col
-          desktop:grid
-          desktop:grid-cols-[252px_1fr]
-          desktop:opacity-(--html-opacity)
-        ${clsx({
+      <Dashboard
+        className={clsx("desktop:opacity-(--html-opacity)", {
           "desktop:mix-blend-difference": differenceMode,
         })}
-        `}
         style={
           {
             // Difference mode needs full opacity so matching pixels turn black.
@@ -64,30 +51,7 @@ export default function Dashboard1() {
             "--html-opacity": showHtml ? (differenceMode ? 1 : htmlOpacity) : 0,
           } as React.CSSProperties
         }
-      >
-        <Sidebar />
-        {/* <div className="bg-emerald-900 flex-auto">content palceholder</div> */}
-        <div className="px-4 pt-6 pb-10 md:px-8 desktop:pt-10.75 desktop:px-11.75 desktop:pb-0 flex-auto min-w-0">
-          <Header />
-          <div className="flex flex-col xl:flex-row mt-8 gap-8 desktop:mt-[44px] xl:gap-[21px]">
-            <div className="min-w-0 xl:flex-[596px] xl:grow-0">
-              <CardSummary />
-              <TransationHistory />
-            </div>
-            <div className="flex flex-col flex-auto min-w-0">
-              <div className="xl:pl-[12px]">
-                <GoalsSection />
-                <StatsSection />
-              </div>
-
-              <div className="flex flex-col sm:flex-row mt-8 desktop:mt-[44px] gap-6 sm:gap-[21px]">
-                <NewTransactionSection />
-                <LoanSection />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      />
 
       <div className="desktop:hidden fixed bottom-2 inset-x-2 z-20 flex items-center gap-3 rounded-lg bg-dark-gray/90 px-3 py-2 text-xs text-white">
         <Link
@@ -105,12 +69,17 @@ export default function Dashboard1() {
       {/* Opaque light panel keeps the dark shadcn controls readable over any page content */}
       <div className="hidden desktop:block fixed bottom-1 right-1 w-60 z-20 rounded-lg border border-neutral-200 bg-white/95 p-3 text-neutral-900 shadow-lg backdrop-blur-sm">
         <div className="flex flex-col">
-          <Link
-            href="/"
-            className="mb-3 inline-flex items-center gap-1 border-b border-neutral-200 pb-2 text-sm font-medium text-neutral-600 transition hover:text-neutral-900"
-          >
-            ← All projects
-          </Link>
+          <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-2 text-sm font-medium text-neutral-600">
+            <Link href="/" className="transition hover:text-neutral-900">
+              ← All projects
+            </Link>
+            <Link
+              href="/implementation/dashboard-1"
+              className="transition hover:text-neutral-900"
+            >
+              Hide tools
+            </Link>
+          </div>
           <ul className="space-y-2">
             <li>
               <div className="flex items-center space-x-2">
@@ -166,6 +135,14 @@ export default function Dashboard1() {
               </div>
             </li>
           </ul>
+          <a
+            href="https://www.figma.com/community/file/894542039433511203/financial-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 border-t border-neutral-200 pt-2 text-sm font-medium text-neutral-600 transition hover:text-neutral-900"
+          >
+            Open Figma design ↗
+          </a>
         </div>
       </div>
     </div>

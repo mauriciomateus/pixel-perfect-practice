@@ -4,7 +4,8 @@ import Link from "next/link";
 type Project = {
   title: string;
   description: string;
-  demo: string;
+  implementation: string;
+  diff: string;
   image: string;
   design: {
     url: string;
@@ -20,7 +21,8 @@ const projects: Project[] = [
     title: "Financial Dashboard",
     description:
       "Desktop layout matched pixel-for-pixel against the original mockup. Tablet and mobile layouts are my own responsive adaptation.",
-    demo: "/demos/dashboard-1",
+    implementation: "/implementation/dashboard-1",
+    diff: "/diff/dashboard-1",
     image: "/img/financial-dashboard/financial-dashboard.png",
     design: {
       url: "https://www.figma.com/community/file/894542039433511203/financial-dashboard",
@@ -59,13 +61,13 @@ export default function Home() {
           <ul className="mt-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <li
-                key={project.demo}
+                key={project.implementation}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <Link
-                  href={project.demo}
+                  href={project.implementation}
                   className="relative block aspect-16/10 overflow-hidden bg-neutral-100"
-                  aria-label={`Open the ${project.title} demo`}
+                  aria-label={`View the ${project.title} implementation`}
                 >
                   <Image
                     src={project.image}
@@ -107,10 +109,16 @@ export default function Home() {
 
                   <div className="mt-5 flex flex-wrap gap-3 pt-1">
                     <Link
-                      href={project.demo}
+                      href={project.implementation}
                       className="inline-flex items-center rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700"
                     >
-                    My Html
+                      View site
+                    </Link>
+                    <Link
+                      href={project.diff}
+                      className="inline-flex items-center rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-800 transition hover:border-neutral-900"
+                    >
+                      Compare with design
                     </Link>
                     <a
                       href={project.design.url}
