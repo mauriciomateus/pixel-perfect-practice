@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Two offset squares: a design layer and an implementation layer lining up -->
+  <rect width="32" height="32" rx="7" fill="#171717"/>
+  <rect x="7" y="7" width="13" height="13" rx="2" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+  <rect x="12" y="12" width="13" height="13" rx="2" fill="#10b981"/>
+</svg>
