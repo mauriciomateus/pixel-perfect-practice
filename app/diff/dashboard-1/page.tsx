@@ -31,7 +31,8 @@ export default function Dashboard1() {
             `}
       >
         <div
-          className="w-[1477px] min-h-screen bg-no-repeat"
+          // mt matches the Dashboard wrapper's desktop:pt-[77.5px] so the mockup lines up with the box
+          className="w-[1477px] min-h-screen mt-[77.5px] bg-no-repeat"
           style={{
             backgroundImage:
               "url(/img/financial-dashboard/financial-dashboard.png)",

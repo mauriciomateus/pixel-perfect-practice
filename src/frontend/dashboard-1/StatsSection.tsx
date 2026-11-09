@@ -136,7 +136,7 @@ function Stat({ stat }: { stat: StatData }) {
     <div className="flex  mt-[16px] -ml-[2px] gap-[16px]">
       <div
         className="size-[43px] rounded-[3px] flex justify-center items-center bg-background "
-        style={{ "--background": stat.iconBg }}
+        style={{ "--background": stat.iconBg } as React.CSSProperties}
       >
         {stat.icon}
       </div>

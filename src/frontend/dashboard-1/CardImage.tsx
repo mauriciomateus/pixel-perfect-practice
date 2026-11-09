@@ -54,7 +54,7 @@ export default function CardImage() {
           <mask
             id="mask0_0_1"
             style={{
-              "mask-type": "alpha",
+              maskType: "alpha",
             }}
             maskUnits="userSpaceOnUse"
             x="0"

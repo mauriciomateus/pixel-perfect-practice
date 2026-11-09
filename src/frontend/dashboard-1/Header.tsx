@@ -66,7 +66,7 @@ export default function Header() {
           >
             <mask
               id="mask0_1_300"
-              style={{ "mask-type": "alpha" }}
+              style={{ maskType: "alpha" }}
               maskUnits="userSpaceOnUse"
               x="0"
               y="0"
