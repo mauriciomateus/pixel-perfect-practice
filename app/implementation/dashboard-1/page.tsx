@@ -25,6 +25,14 @@ export default function Dashboard1Implementation() {
         >
           Compare with design
         </Link>
+        <a
+          href="https://www.figma.com/community/file/894542039433511203/financial-dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-md px-2.5 py-1.5 transition hover:bg-neutral-100 hover:text-neutral-900"
+        >
+          Figma design ↗
+        </a>
       </nav>
     </>
   );
